@@ -4,11 +4,15 @@ import React, { useState } from "react";
 const TodoList=(props)=>{
     const pro_val=props.val;
     const [newData, currData]=useState(props.txt);
+    const [editnew, editcurrval]=useState("");
     const editData=(e)=>{
-        console.log(e.target.value);
-        currData(e.target.val)
+        console.log("Tgis is Edit"+e.target.value);
+        currData(e.target.value);
         //document.getElementById('')
     }
+    // const editnew_save=()=>{
+    //     editcurrval(e.target.val)
+    // }
     const styleEdit={
         width:"auto",
         height:"100%",
@@ -44,8 +48,9 @@ const TodoList=(props)=>{
             <button className="edit" style={styleEdit} onClick={show_edit}>Edit</button>
             <div style={currstate} > <textarea id="ta" onChange={editData} value={newData}></textarea>
             <button id="saveTask" onClick={()=>{
-                const v=document.getElementById('ta').value;
+                const v=newData;
                 props.onEdit(props.id,v);
+                hide_edit();
             }}>Save</button></div>
         </div>
         </>
