@@ -26,20 +26,52 @@ const Add=()=>{
         });
     };
     const Editval=(id,d)=>{
-        console.log(d);
-        if(d!="")
+        if(d!=="")
         {
-            item_arrval((id)=>{
-                return[ d];
-            });
+            console.log("This is incoming id:"+d);
+            item_arrval((oldItems)=>{
+                console.log(oldItems[id]);
+                oldItems[id]=d;
+                return [...oldItems];
+            })
         }
-        // item_val(d.newData);
-        // if(item_data!="")
+        // const updateItem = (id, editValue) => {
+        //     // console.log(id);
+        //     // console.log(editValue);
+        //     if (editValue !== "") {
+        //       setItemArr((preValu) => {
+        //         preValu[id] = editValue;
+        //         return [...preValu];
+        //       });
+        //     }
+        //   };
+        // console.log("This is"+id);
+        // if(d!="")
         // {
-        //     item_arrval((oldItems)=>{
-        //         return[item_data];
+        //     item_arr.map((val,ind)=>{
+        //         console.log("Thsi is ="+val);
+        //         if(ind==id)
+        //         {
+        //             val=d;
+        //             console.log("Thsi is ="+val);
+        //             return [d];
+        //         }
         //     })
+
+        //     // item_arrval((id)=>{
+        //     //     if(id==id)
+        //     //     {
+        //     //         console.log(d);
+        //     //     return[ d];}
+        //     // });
         // }
+        // // item_val(d.newData);
+        // // if(item_data!="")
+        // // {
+        // //     item_arrval((oldItems)=>{
+        // //         return[item_data];
+        // //     })
+        // // }
     }
    // const editval=(id)=>{}
     return(
